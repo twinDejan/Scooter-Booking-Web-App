@@ -1,0 +1,68 @@
+﻿@model ScooterBookingWebApp.ViewModels.ScooterFormViewModel
+@{
+    ViewBag.Title = "Scooters Form";
+}
+<head>
+    <style type="text/css">
+        #contentMargin {
+            margin-top: 20px;
+        }
+        #bodyCSS {
+            background-color: #000;
+            color: #ffffff;
+        }
+        .greenButton {
+            background-color: #00FF00;
+        }
+    </style>
+</head>
+<body id="bodyCSS">
+    <h2 id="contentMargin">New Scooters</h2>
+    @using (Html.BeginForm("Save", "Scooter"))
+    {
+        @Html.ValidationSummary(true, "Please fix the following errors.")
+        <div class="form-group">
+            @Html.LabelFor(m => m.Description)
+            @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Description)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Speed)
+            @Html.TextBoxFor(m => m.Speed, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Speed)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Range)
+            @Html.TextBoxFor(m => m.Range, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Range)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Types)
+            @Html.DropDownListFor(m => m.TypeId, Model.ScooterTypesSelected, "Choose Type", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.TypeId)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.RideLocation)
+            @Html.TextBoxFor(m => m.RideLocation, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.RideLocation)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PricePerHour)
+            @Html.TextBoxFor(m => m.PricePerHour, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PricePerHour)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Availability)
+            @Html.TextBoxFor(m => m.Availability, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Availability)
+        </div>
+        @Html.HiddenFor(m => m.Id)
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-success greenButton">Save</button>
+    }
+ </body>
+    @section scripts
+{
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+

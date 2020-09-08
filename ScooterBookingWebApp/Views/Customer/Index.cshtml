@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ScooterBookingWebApp.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <style type="text/css">
+        #contentMargin {
+            margin-top: 20px;
+        }
+        #bodyCSS {
+            background-color: #000;
+            color: #ffffff;
+        }
+        .greenButton {
+            background-color: #00FF00;
+            color: #000;
+        }
+        .tableHead {
+            background-color: #00FF00;
+            color: #000;
+        }
+        td:hover {
+            color: #00FF00;
+        }
+
+    </style>
+</head>
+<body id="bodyCSS">
+    <h2 id="contentMargin">Customers Table</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "New", null, new { @class = "btn btn-success greenButton" })
+    </p>
+    <table class="table text-white">
+        <tr class="tableHead">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsSubscribedToNewsletter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MembershipTypeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birthdate)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsSubscribedToNewsletter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MembershipTypeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birthdate)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>

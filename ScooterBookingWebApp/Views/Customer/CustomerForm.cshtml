@@ -1,0 +1,55 @@
+﻿@model ScooterBookingWebApp.ViewModels.CustomerFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <style type="text/css">
+        #contentMargin {
+            margin-top: 20px;
+        }
+        #bodyCSS {
+            background-color: #000;
+            color: #ffffff;
+        }
+        .greenButton {
+            background-color: #00FF00;
+        }
+    </style>
+</head>
+<body id="bodyCSS">
+    <h2 id="contentMargin">New Customer</h2>
+    @using (Html.BeginForm("Save", "Customer"))
+    {
+        @Html.ValidationSummary(true, "Please fix the following errors.")
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customer.Name)
+            @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Customer.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customer.MembershipType)
+            @Html.DropDownListFor(m => m.Customer.MembershipTypeId, Model.MembershipTypesSelected, "Select Membership Type", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Customer.MembershipType)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Customer.Birthdate)
+            @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Customer.Birthdate)
+        </div>
+        <div class="checkbox">
+            <label>
+                @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter) Subscribe to Newsletter?
+            </label>
+        </div>
+        @Html.HiddenFor(m => m.Customer.Id)
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-success greenButton">Save</button>
+    }
+</body>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

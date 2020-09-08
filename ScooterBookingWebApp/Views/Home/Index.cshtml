@@ -1,31 +1,375 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <style type="text/css">
+        #homeBody {
+            background-color: #000;
+            color: #ffffff;
+            margin-top: 5px;
+        }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+        .row{
+            margin-top: 20px;
+        }
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        .greenButton, .whiteTextBtn:hover {
+            background-color: #00FF00;
+            color: #000;
+        }
+
+        .whiteTextBtn {
+            color: #ffffff;
+        }
+
+        .green {
+            color: #00FF00;
+        }
+
+        h3:hover {
+            color: green;
+        }
+
+        .howToSection {
+            max-height: 550px;
+            max-width: 600px;
+        }
+
+        #safetyCont {
+            margin-top: 30px;
+        }
+
+        .safetyTextMargin{
+            margin-top: 15px;
+        }
+
+        .centerText {
+            margin-left: 500px;
+        }
+
+        .carousel-item {
+            margin-top: 10px;
+            height: 73vh;
+            min-height: 250px;
+            background: no-repeat center center scroll;
+            background-size: cover;
+        }
+
+        .hovereffect {
+            width: 100%;
+            height: 100%;
+            max-height: 600px;
+            float: left;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            cursor: default;
+        }
+
+        .hovereffect img {
+            display: block;
+            position: relative;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+
+        .hovereffect:hover img {
+            -ms-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    </style>
+
+</head>
+<body id="homeBody">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('https://electrek.co/wp-content/uploads/sites/3/2018/10/Lime-S-Gen-3-Rider2-electrek.jpg?quality=82&strip=all&w=1600')">
+                <div class="carousel-caption d-md-block">
+                    <p class="lead">You can find them on GoogleMaps</p>
+                </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://logistik-aktuell.com/wp-content/uploads/sites/487/header_final-2.jpg')">
+                <div class="carousel-caption d-md-block">
+                    <p class="lead">Different types of scooters available.</p>
+                </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('http://www.fema-online.eu/website/wp-content/uploads/header_escooter_190719.jpg')">
+                <div class="carousel-caption d-md-block">
+                    <p class="lead">We believe that city life is a beautiful life.</p>
+                </div>
+            </div>
+            <!-- Slide Four - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://s.hdnux.com/photos/72/62/24/15410468/7/rawImage.jpg')">
+                <div class="carousel-caption d-md-block">
+                    <p class="lead">You can drive for cheap and be faster than others.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div>
+        <h1 class="text-lg-center">Unlock Life !</h1>
+        @*<p><img src="https://electrek.co/wp-content/uploads/sites/3/2018/06/lime-scooter-large-header.jpg?quality=82&strip=all&w=1600" height="500px" width="1100px" /></p>*@
+        <p class="text-lg-center"><a href="Home/About" class="btn btn-success btn-lg greenButton">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>No harmful effect on the planet</h2>
+            <p>
+                The most important for our planet is the fact that those vehicles are eco-friendly.
+                That is important for us as well.
+                We have to take care of the Earth, and there are a lot of things we can do.
+            </p>
+            <p><a class="btn btn-default whiteTextBtn" href="Home/About">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Training and license aren’t needed</h2>
+            <p>
+                Electric scooters require no special skills or long-time training.
+                It’s so simple that everyone can learn to ride it in no time.
+            </p>
+            <p><a class="btn btn-default whiteTextBtn" href="Home/About">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>One of the alternative ways of transportation</h2>
+            <p>
+                Yes, we can realize that these scooters are the best alternative way of transportation.
+                Use it once, and you will never regret it.
+            </p>
+            <p><a class="btn btn-default whiteTextBtn" href="Home/About">Learn more &raquo;</a></p>
+        </div>
     </div>
-</div>
+    <div>
+        <h1 class="text-lg-center green">HOW TO GoGreen !</h1>
+        <h1 class="text-lg-center">Simple, accessible on web for all.</h1>
+        <p><img class="rounded mx-auto d-block howToSection" src="https://images.ctfassets.net/f107dq97zt0a/4FZmtRqTSbEgVvsMZd8tot/959001157f2d1598cd795e6c7d23c336/WearAHelmet.jpg?w=1024&q=60" /></p>
+        <p class="text-lg-center">You can easily find this on a web then you just need to:</p>
+        <h3 class="text-lg-center green">- Book -</h3>
+        <h3 class="text-lg-center green">- Locate -</h3>
+        <h3 class="text-lg-center green">- Ride -</h3>
+        <p>Enjoy your ride. Follow all traffic rules, stick to the streets & bike lanes where legally permitted. Wear a helmet and respect others sharing the road.</p>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 scooters ">
+            <div class="col art-head">
+                <h1 class="text-lg-center green">Our offer of Scooters</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6  ">
+                    <article class="story">
+                        <header class="hovereffect">
+                            <img src="https://www.industrytap.com/wp-content/uploads/2018/08/limey.jpg" class="img-fluid tom-col" />
+                        </header>
+                        <div class="article-body">
+                            <span class="coct">Price: 1 $/h</span>
+                            <h3 class="scooter-name">
+                                Two-wheeled electric kick scooter
+                            </h3>
+                            <div class="summary">
+                                <p class="text-lg-center"><a href="/Scooter/ScooterTable" class="btn btn-success btn-lg greenButton">Check Details &raquo;</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6  ">
+                    <article class="story">
+                        <header class="hovereffect">
+                            <img src="https://voltagerider.com/wp-content/uploads/2019/09/types-of-personal-transporters-and-electric-scooters.jpg" class="img-fluid tom-col" />
+                        </header>
+                        <div class="article-body">
+                            <span class="coct">Price: 1.5 $/h</span>
+                            <h3 class="scooter-name">
+                                Self- balancing personal transporters
+                            </h3>
+                            <div class="summary">
+                                <p class="text-lg-center"><a href="/Scooter/ScooterTable" class="btn btn-success btn-lg greenButton">Check Details &raquo;</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6  ">
+                    <article class="story">
+                        <header class="hovereffect">
+                            <img src="https://www.dhresource.com/600x600/f2/albu/g7/M00/0E/24/rBVaSVtQsjaAKSWVAACt4z2WJzA943.jpg" class="img-fluid tom-col" />
+                        </header>
+                        <div class="article-body">
+                            <span class="coct">Price: 1.5 $/h</span>
+                            <h3 class="scooter-name">
+                                Three-wheeled electric kick scooter
+                            </h3>
+                            <div class="summary">
+                                <p class="text-lg-center"><a href="/Scooter/ScooterTable" class="btn btn-success btn-lg greenButton">Check Details &raquo;</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6  ">
+                    <article class="story">
+                        <header class="hovereffect">
+                            <img src="https://i2.wp.com/bestcharged.com/wp-content/uploads/2019/10/qiewa-qpower.jpg?w=688&ssl=1" class="img-fluid tom-col" />
+                        </header>
+                        <div class="article-body">
+                            <span class="coct">Price: 2 $/h</span>
+                            <h3 class="scooter-name">
+                                Off-Road electric kick scooter
+                            </h3>
+                            <div class="summary">
+                                <p class="text-lg-center"><a href="/Scooter/ScooterTable" class="btn btn-success btn-lg greenButton">Check Details &raquo;</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6  ">
+                    <article class="story">
+                        <header class="hovereffect">
+                            <img src="https://www.bikecraze.com/v/vspfiles/photos/SEEV-WHT-2.jpg?v-cache=1539322658" class="img-fluid tom-col" />
+                        </header>
+                        <div class="article-body">
+                            <span class="coct">Price: 2 $/h</span>
+                            <h3 class="scooter-name">
+                                Fat tires electric kick scooter
+                            </h3>
+                            <div class="summary">
+                                <p class="text-lg-center"><a href="/Scooter/ScooterTable" class="btn btn-success btn-lg greenButton">Check Details &raquo;</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6  ">
+                    <article class="story">
+                        <header class="hovereffect">
+                            <img src="https://voltagerider.com/wp-content/uploads/2018/02/Glion-Dolly-Foldable.jpg" class="img-fluid tom-col" />
+                        </header>
+                        <div class="article-body">
+                            <span class="coct">Price: 1 $/h</span>
+                            <h3 class="scooter-name">
+                                Foldable electric kick scooter
+                            </h3>
+                            <div class="summary">
+                                <p class="text-lg-center"><a href="/Scooter/ScooterTable" class="btn btn-success btn-lg greenButton">Check Details &raquo;</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                @*<div>
+                        <a class="centerText" href="https://voltagerider.com/types-of-electric-scooters/">Learn More about the scooters&raquo;</a>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+    <div id="safetyCont">
+        <h1 class="text-lg-center green">SAFETY</h1>
+        <h2 class="text-lg-center">You’re free to roam. Stay safe.</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Use bike lanes, where legally permitted.</h2>
+                <p>
+                    Bike lanes reduce accidents by 90%, so you can focus on the road ahead.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>Wear a helmet.</h2>
+                <p>
+                    Helmets significantly reduce the risk of injury, so protect what’s most important.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>Ride responsibly.</h2>
+                <p>
+                    Staying mindful while riding can help prevent scooter accidents.
+                    Slow down when riding downhill,
+                    wear reflective clothing when dark and never drink & ride.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="bgpad text-center" style="background-color:white; color: black;">
+        <h2>How to Ride Dock-Free Bikes &amp; Scooters</h2>
+        <div class="row">
+            <div class="col-md-6 view overlay zoom ">
+                <img src="https://cdn2.hubspot.net/hubfs/3434231/Assets/how-to-2018-nt-1.jpg" class="img-fluid tom-col">
+                <h4 class="htlhelp text-center safetyTextMargin">Always follow helmet laws</h4>
+            </div>
+            <div class="col-md-6 ">
+                <img src="https://cdn2.hubspot.net/hubfs/3434231/Assets/how-to-2018-nt-2.jpg" class="img-fluid tom-col">
+                <h4 class="htlhelp text-center safetyTextMargin">Park properly by curbside</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 ">
+                <img src="https://cdn2.hubspot.net/hubfs/3434231/Assets/how-to-2018-nt-3.jpg" class="img-fluid tom-col">
+                <h4 class="htlhelp text-center safetyTextMargin">Do a pre-ride safety check</h4>
+            </div>
+            <div class="col-md-6 ">
+                <img src="https://cdn2.hubspot.net/hubfs/3434231/Assets/how-to-2018-nt-4.jpg" class="img-fluid tom-col">
+                <h4 class="htlhelp text-center safetyTextMargin">Apply brakes to slow down/stop</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 ">
+                <img src="https://cdn2.hubspot.net/hubfs/3434231/Assets/how-to-2018-nt-5.jpg" class="img-fluid tom-col">
+                <h4 class="htlhelp text-center safetyTextMargin">Be mindful of road obstructions</h4>
+            </div>
+            <div class="col-md-6 ">
+                <img src="https://cdn2.hubspot.net/hubfs/3434231/Assets/how-to-2018-nt-6.jpg" class="img-fluid tom-col">
+                <h4 class="htlhelp text-center safetyTextMargin">Always follow traffic laws</h4>
+            </div>
+        </div>
+
+    </div>
+    <div id="hs_cos_wrapper_widget_1513336126627" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="background-color:white; color: black;" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html">
+        <div class="container">
+            <div class="bgpad text-center">
+                <h2>Hand Signals</h2>
+                <div class="row">
+                    <div class="col-md-4 hovereffect">
+                        <img src="https://cdn2.hubspot.net/hubfs/3434231/Assets/hand-signals-2018-nt-1.jpg" class="img-fluid tom-col">
+                        <h4 class="htlhelp text-center safetyTextMargin">Left Turn</h4>
+                    </div>
+                    <div class="col-md-4 hovereffect">
+                        <img src="https://cdn2.hubspot.net/hubfs/3434231/Assets/hand-signals-2018-nt-2.jpg" class="img-fluid tom-col">
+                        <h4 class="htlhelp text-center safetyTextMargin">Right Turn</h4>
+                    </div>
+                    <div class="col-md-4 hovereffect">
+                        <img src="https://cdn2.hubspot.net/hubfs/3434231/Assets/hand-signals-2018-nt-3.jpg" class="img-fluid tom-col">
+                        <h4 class="htlhelp text-center safetyTextMargin">Stop</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.carousel').carousel({
+            interval: 5000,
+            pause: "false"
+        });
+    </script>
+</body>

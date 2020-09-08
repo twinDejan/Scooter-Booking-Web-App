@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ScooterBookingWebApp.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -22,7 +23,15 @@ namespace ScooterBookingWebApp.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.TheMessage = "Having trouble? Send us a message.";
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Contact(string message)
+        {
+            // TODO: send message to HQ
+            ViewBag.TheMessage = "Thanks, we got your message!";
 
             return View();
         }

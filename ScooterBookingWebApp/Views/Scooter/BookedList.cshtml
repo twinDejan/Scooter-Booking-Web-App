@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ScooterBookingWebApp.Models.BookedScooter>
+
+@{
+    ViewBag.Title = "BookedList";
+}
+<head>
+    <style type="text/css">
+        #contentMargin {
+            margin-top: 20px;
+        }
+
+        #bodyCSS {
+            background-color: #000;
+            color: #ffffff;
+        }
+
+        .greenButton {
+            background-color: #00FF00;
+            color: #000;
+        }
+
+        .tableHead {
+            background-color: #00FF00;
+            color: #000;
+        }
+
+        td:hover {
+            color: #00FF00;
+        }
+    </style>
+</head>
+<body id="bodyCSS">
+    <h2 id="contentMargin">Booked Scooters</h2>
+
+    <table class="table text-white">
+        <tr class="tableHead">
+            <th>
+                @Html.DisplayNameFor(model => model.CollectionPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReturnPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeRented)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeReturned)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CollectionPlace)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReturnPlace)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeRented)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeReturned)
+                </td>
+                <td>
+                    @Html.ActionLink("Return Early", "Return", new { id = item.Id }, new { @class = "btn btn-success greenButton" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ScooterBookingWebApp.Models.Scooter>
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <style type="text/css">
+        #contentMargin {
+            margin-top: 20px;
+        }
+
+        #bodyCSS {
+            background-color: #000;
+            color: #ffffff;
+        }
+
+        .greenButton {
+            background-color: #00FF00;
+            color: #000;
+        }
+
+        .tableHead {
+            background-color: #00FF00;
+            color: #000;
+        }
+        td:hover {
+            color: #00FF00;
+        }
+    </style>
+</head>
+<body id="bodyCSS">
+    <h2 id="contentMargin">Scooters Table</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "New", "Scooter", null, new { @class = "btn btn-success greenButton" })
+    </p>
+    <table class="table text-white">
+        <tr class="tableHead">
+            <th>
+                @Html.DisplayNameFor(model => model.TypeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Range)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RideLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PricePerHour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Availability)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Speed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Range)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RideLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricePerHour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Availability)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
